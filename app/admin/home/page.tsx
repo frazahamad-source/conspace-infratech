@@ -7,15 +7,15 @@ import { Save, Image as ImageIcon, Type, Loader2 } from "lucide-react";
 interface HomeSettings {
     homeBgPath: string | null;
     homepageHeadings: {
-        main: string;
-        sub: string;
+        title: string;
+        subtitle: string;
     };
 }
 
 export default function HomepageEditor() {
     const [settings, setSettings] = useState<HomeSettings>({
         homeBgPath: null,
-        homepageHeadings: { main: "", sub: "" },
+        homepageHeadings: { title: "", subtitle: "" },
     });
     const [isLoading, setIsLoading] = useState(true);
     const [isSaving, setIsSaving] = useState(false);
@@ -32,7 +32,7 @@ export default function HomepageEditor() {
             if (data && !data.error) {
                 setSettings({
                     homeBgPath: data.homeBgPath,
-                    homepageHeadings: data.homepageHeadings || { main: "", sub: "" },
+                    homepageHeadings: data.homepageHeadings || { title: "", subtitle: "" },
                 });
             }
         } catch (error: any) {

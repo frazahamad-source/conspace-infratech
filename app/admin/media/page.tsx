@@ -5,7 +5,7 @@ import ImageUploader from "@/components/ImageUploader";
 import { Trash2, ExternalLink, AlertCircle } from "lucide-react";
 
 interface MediaItem {
-    id: string | number;
+    id: string;
     url: string;
     storagePath: string;
     createdAt: string;
@@ -14,7 +14,7 @@ interface MediaItem {
 export default function MediaLibrary() {
     const [images, setImages] = useState<MediaItem[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [deleteId, setDeleteId] = useState<string | number | null>(null);
+    const [deleteId, setDeleteId] = useState<string | null>(null);
 
     useEffect(() => {
         fetchImages();
@@ -51,7 +51,7 @@ export default function MediaLibrary() {
     const handleDelete = async () => {
         if (!deleteId) return;
 
-        const item = images.find(img => img.id === deleteId);
+        const item = images.find(img => String(img.id) === deleteId);
         if (!item) return;
 
         try {
@@ -62,7 +62,7 @@ export default function MediaLibrary() {
             const dbData = await dbResponse.json();
             if (dbData.error) throw new Error(dbData.error);
 
-            setImages(images.filter(img => img.id !== deleteId));
+            setImages(images.filter(img => String(img.id) !== deleteId));
             setDeleteId(null);
         } catch (error: any) {
             console.error("Error deleting image:", error.message);
