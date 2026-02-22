@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
     LayoutDashboard,
-    Image,
+    Image as ImageIcon,
     Home,
     Settings,
     LogOut,
