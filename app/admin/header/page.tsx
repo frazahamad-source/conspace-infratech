@@ -5,7 +5,7 @@ import ImageUploader from "@/components/ImageUploader";
 import { Save, List, Image as ImageIcon, Check, X, Loader2, Plus } from "lucide-react";
 
 interface PageSetting {
-    id: string;
+    id: any;
     title: string;
     path: string;
     isVisible: boolean;
@@ -61,7 +61,7 @@ export default function HeaderSettings() {
         }
     };
 
-    const handlePageChange = (id: string, field: keyof PageSetting, value: any) => {
+    const handlePageChange = (id: any, field: keyof PageSetting, value: any) => {
         setPages(pages.map(p => p.id === id ? { ...p, [field]: value } : p));
     };
 
