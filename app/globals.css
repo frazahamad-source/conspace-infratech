@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #0f2c59;
+    --secondary-color: #dac5a7;
+    --accent-color: #e76f51;
+    --text-color: #333333;
+    --light-text: #666666;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --dark-bg: #1a1a1a;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    @apply bg-white;
+}
+
+@layer components {
+    .container {
+        @apply max-w-[1200px] mx-auto px-5;
+    }
+
+    .section {
+        @apply py-20;
+    }
+
+    .btn {
+        @apply inline-block px-8 py-3 rounded font-medium cursor-pointer transition-all duration-300;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white hover:bg-[#0b1f40];
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-primary hover:bg-[#c9b392];
+    }
+
+    .section-header {
+        @apply text-center mb-12;
+    }
+
+    .section-header h2 {
+        @apply text-4xl font-bold text-primary mb-4;
+    }
+
+    .section-header p {
+        @apply text-slate-500 text-lg;
+    }
+}
+
+/* Add custom styles from the original project if needed */
+.admin-sidebar {
+    @apply fixed left-0 top-0 h-full w-64 bg-primary text-white p-6 flex flex-col;
+}
+
+.admin-main {
+    @apply ml-64 p-8 min-h-screen;
+}
+
+.admin-topbar {
+    @apply flex justify-between items-center mb-8 pb-4 border-b border-slate-200;
+}
+
+.btn-admin {
+    @apply px-4 py-2 rounded-md font-medium transition-all;
+}
+
+.btn-admin-primary {
+    @apply bg-primary text-white hover:bg-opacity-90;
+}
+
+.btn-admin-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+}
