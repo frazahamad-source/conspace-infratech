@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     typescript: {
-        // This allows the build to complete even if there are sync issues with files
+        // This stops the build from failing even if GitHub has old files
         ignoreBuildErrors: true,
     },
     eslint: {
-        // This prevents linting errors from blocking your deployment
+        // This prevents styling errors from stopping the site
         ignoreDuringBuilds: true,
     },
     images: {
