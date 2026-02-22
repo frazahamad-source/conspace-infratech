@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import Sidebar from "@/components/Sidebar";
 import { usePathname } from "next/navigation";
 
