@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useState, useEffect } from "react";
 import ImageUploader from "@/components/ImageUploader";
 import { Save, Image as ImageIcon, Type, Loader2 } from "lucide-react";
@@ -127,10 +129,10 @@ export default function HomepageEditor() {
                         <label className="text-sm font-bold text-slate-700">Main Heading</label>
                         <input
                             type="text"
-                            value={settings.homepageHeadings.main}
+                            value={settings.homepageHeadings.title}
                             onChange={(e) => setSettings({
                                 ...settings,
-                                homepageHeadings: { ...settings.homepageHeadings, main: e.target.value }
+                                homepageHeadings: { ...settings.homepageHeadings, title: e.target.value }
                             })}
                             className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                             placeholder="e.g. Excellence in Construction"
@@ -141,10 +143,10 @@ export default function HomepageEditor() {
                         <label className="text-sm font-bold text-slate-700">Subheading</label>
                         <textarea
                             rows={3}
-                            value={settings.homepageHeadings.sub}
+                            value={settings.homepageHeadings.subtitle}
                             onChange={(e) => setSettings({
                                 ...settings,
-                                homepageHeadings: { ...settings.homepageHeadings, sub: e.target.value }
+                                homepageHeadings: { ...settings.homepageHeadings, subtitle: e.target.value }
                             })}
                             className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
                             placeholder="e.g. Building strong foundations for a better tomorrow."
